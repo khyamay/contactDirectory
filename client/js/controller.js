@@ -9,9 +9,9 @@ angular.module('myApp.controllers', [])
 		$rootScope.go = function (path){
 			$scope.slide = 'slide-left';
 			$location.url(path);
-		}
+		};
 	}])
-	.controller('EmployeeListCtrl', ['$scope', '$routeParams' 'Employee', function ($scope, $routeParams, Employee){
+	.controller('EmployeeListCtrl', ['$scope', 'Employee', function ($scope, Employee){
 		$scope.employees = Employee.query();
 	}])
 	.controller('EmployeeDetailCtrl', ['$scope, $routeParams', 'Employee', function ($scope, $routeParams, Employee){

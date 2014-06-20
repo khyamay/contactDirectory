@@ -18,7 +18,7 @@
         	var employee = null, 
         	l = employees.length,
         	i; 
-        	for (i = 0, i < l; i ++){
+        	for (i = 0; i < l; i ++){
         		if (employees[i].id === id ){
         			employee = employees[i];
         			break;
