@@ -1,9 +1,10 @@
 var express = require('express');
 var path = require('path');
+var bodyParser  = require('body-parser')
 var employees = require('./routes/employee');
 
 var app = express();
-app.use(express.bodyParser());
+app.use(bodyParser());
 app.use(express.static(path.join(__dirname, '...client')));
 
 app.get('/employee/:id/reports', employees.findByManager);

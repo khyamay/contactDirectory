@@ -26,7 +26,8 @@ exports.findById = function (req, res){
 
 exports.findByManager = function (req, res){
 	var id = parseInt(req.params.id);
-	db.collection.('employees', function (err, collection){
+	 console.log('findByManager: ' + id);
+	db.collection('employees', function (err, collection){
 		collection.find({'managerId': id}).toArray(function (err, items){
 			res.jsonp(items);
 		});
@@ -67,7 +68,7 @@ var populateDB = function() {
     ];
 
     db.collection('employees', function (err, collection){
-    	collection.insert(employees, {safe: true}, function (err, result){};)
+    	collection.insert(employees, {safe: true}, function (err, result){});
     });
 
 };
